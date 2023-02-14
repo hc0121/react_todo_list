@@ -3,7 +3,7 @@ import './App.css';
 import Title from "./components/Title";
 import AddTodo from "./components/AddTodo";
 import Todo from "./components/Todo";
-import{collection,query,onSnapshot,doc,updateDoc,deleteDoc, QuerySnapshot} from "firebase/firestore";
+import{collection,query,onSnapshot,doc,updateDoc,deleteDoc, querySnapshot} from "firebase/firestore";
 import { db } from "./firebase";
 import { async } from "@firebase/util";
 
@@ -12,9 +12,9 @@ function App() {
 
   React.useEffect(()=>{
     const q=query(collection(db, "todos"));
-    const unsub = onSnapshot(q,(QuerySnapshot)=>{
+    const unsub = onSnapshot(q,(querySnapshot)=>{
       let todosArray=[];
-      QuerySnapshot.forEach((doc)=>{
+      querySnapshot.forEach((doc)=>{
         todosArray.push({...doc.data(),id:doc.id});
       });
       setTodos(todosArray);
@@ -46,13 +46,13 @@ function App() {
       </div>
       <div className="todo_container">
         {todos.map((todo)=>(
-        <Todo
-          key={todo.id}
-          todo={todo}
-          toggleComplete={toggleComplete}
-          handleDelete={handleDelete}
-          handleEdit={handleEdit}
-        />
+          <Todo
+            key={todo.id}
+            todo={todo}
+            toggleComplete={toggleComplete}
+            handleDelete={handleDelete}
+            handleEdit={handleEdit}
+          />
         ))}
       </div>
     </div>
