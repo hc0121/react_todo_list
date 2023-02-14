@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Engineer interview homework-React Todo List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Please create a todo app (web or mobile) using reactjs (or react-native or nextjs) that should be able to allow users to create and manage tasks. The app should have a user-friendly interface that allows users to easily add, edit, and delete tasks.
+
+## Need install
+
+* npm install @mui/icons-material
+* npm install @emotion/styled
+* npm install @emotion/react
+* npm install firebase
 
 ## Available Scripts
 
